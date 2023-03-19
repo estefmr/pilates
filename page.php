@@ -2,7 +2,7 @@
     get_header()
 ?>
 
-    <main>
+    <main class="contenedor seccion">
     <?php
             get_template_part('template-parts/pagina');
         ?>

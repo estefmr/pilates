@@ -1,5 +1,8 @@
 <?php
 
+/* includes */
+require get_template_directory() . '/includes/widgets.php';
+
 function healthPilates_setup() {
 /* img destacad */
     add_theme_support('post-thumbnails');
@@ -23,3 +26,28 @@ function healthPilates_scripts_styles() {
 }
 
 add_action('wp_enqueue_scripts', 'healthPilates_scripts_styles');
+
+
+/* definir wdget */
+function healthPilates_widgets() {
+    register_sidebar( array(
+        'name' => 'sidebar 1',
+        'id' => 'sidebar_1',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_wtitle' => '</h3>'
+    ));
+
+    register_sidebar( array(
+        'name' => 'sidebar 2',
+        'id' => 'sidebar_2',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_wtitle' => '</h3>'
+    ));
+
+}
+
+add_action('widgets_init', 'healthPilates_widgets');
